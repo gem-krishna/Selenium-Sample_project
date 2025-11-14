@@ -40,8 +40,8 @@ Copilot must:
 ### **Step 1 — Scan old project**
 # Run:
 
-```bash
-pwsh .github/copilot/Scan-SeleniumUsage.ps1
+```powershell
+powershell -File .github/copilot/Scan-SeleniumUsage.ps1
 ```
 
 
@@ -136,11 +136,20 @@ public class LoginSteps_Playwright {
 # Copilot must delete imports:
 
 ```java
-org.openqa.selenium.*
-io.restassured.*
+import org.openqa.selenium.*;
+import io.restassured.*;
+import io.restassured.response.*;
+import io.restassured.specification.*;
+import io.restassured.http.*;
 ```
-## **Step 6 — Validate**
+## **Step 6 — Update Cucumber Runner Glue**
+# Ensure:
+```java
+glue = { "playwright.steps" }
+```
+        
+## **Step 7 — Validate**
 # Run:
-```bash
-pwsh .github/copilot/MigrationReport.ps1
+```powershell
+powershell -File .github/copilot/MigrationReport.ps1
 ```
